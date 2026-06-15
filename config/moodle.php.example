@@ -1,0 +1,18 @@
+<?php
+declare(strict_types=1);
+
+/**
+ * Moodle LMS Web Services Configuration
+ * REST API for SSO, grade sync, course enrollment
+ */
+return [
+    'base_url'        => rtrim($_ENV['MOODLE_URL'] ?? 'https://lms.xyzpoly.edu.et', '/'),
+    'token'           => $_ENV['MOODLE_TOKEN'] ?? '',
+    'service_name'    => $_ENV['MOODLE_SERVICE'] ?? 'xyz_portal',
+    'rest_format'     => 'json',
+    'timeout'         => 15,
+    'connect_timeout' => 5,
+    'verify_ssl'      => true,
+    'token_endpoint'  => '/login/token.php',
+    'rest_endpoint'   => '/webservice/rest/server.php',
+];

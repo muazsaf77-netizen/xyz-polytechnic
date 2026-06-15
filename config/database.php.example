@@ -1,0 +1,36 @@
+<?php
+declare(strict_types=1);
+
+/**
+ * Database Configuration
+ * MySQL 8.0+ with utf8mb4 support
+ */
+return [
+    'default' => [
+        'host'     => $_ENV['DB_HOST'] ?? '127.0.0.1',
+        'port'     => $_ENV['DB_PORT'] ?? '3306',
+        'dbname'   => $_ENV['DB_NAME'] ?? 'xyz_polytechnic',
+        'username' => $_ENV['DB_USER'] ?? 'xyz_db_user',
+        'password' => $_ENV['DB_PASS'] ?? 'StrongPass!2024',
+        'charset'  => 'utf8mb4',
+        'options'  => [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES => false,
+            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4 COLLATE utf8mb4_unicode_ci",
+        ],
+    ],
+    // Moodle database connection (fallback auth)
+    'moodle' => [
+        'host'     => $_ENV['MOODLE_DB_HOST'] ?? '127.0.0.1',
+        'port'     => '3306',
+        'dbname'   => $_ENV['MOODLE_DB_NAME'] ?? 'moodle',
+        'username' => $_ENV['MOODLE_DB_USER'] ?? 'moodle_readonly',
+        'password' => $_ENV['MOODLE_DB_PASS'] ?? '',
+        'charset'  => 'utf8mb4',
+        'options'  => [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+        ],
+    ],
+];
