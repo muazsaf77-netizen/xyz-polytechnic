@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Eye, CheckCircle, XCircle } from 'lucide-react'
+import { Eye, CircleCheck as CheckCircle, Circle as XCircle } from 'lucide-react'
 import { useLang } from '@/hooks/useLanguage'
 import { supabase } from '@/lib/supabase'
 

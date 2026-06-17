@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { AlertCircle, CheckCircle } from 'lucide-react'
+import { CircleAlert as AlertCircle, CircleCheck as CheckCircle } from 'lucide-react'
 import { useLang } from '@/hooks/useLanguage'
 import { supabase } from '@/lib/supabase'
 

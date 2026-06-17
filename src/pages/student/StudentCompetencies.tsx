@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Brain, CheckCircle } from 'lucide-react'
+import { Brain, CircleCheck as CheckCircle } from 'lucide-react'
 import { useLang } from '@/hooks/useLanguage'
 
 export function StudentCompetencies() {

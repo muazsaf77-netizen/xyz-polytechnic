@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { BarChart3, Users, Briefcase, TrendingUp } from 'lucide-react'
+import { ChartBar as BarChart3, Users, Briefcase, TrendingUp } from 'lucide-react'
 import { useLang } from '@/hooks/useLanguage'
 import { supabase } from '@/lib/supabase'
 
