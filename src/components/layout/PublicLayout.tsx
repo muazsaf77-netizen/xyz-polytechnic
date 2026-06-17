@@ -8,7 +8,7 @@ export function PublicLayout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [phone, setPhone] = useState('')
   const [email, setEmail] = useState('')
-  const { t, lang, setLang } = useLang()
+  const { t, language, setLanguage } = useLang()
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -66,11 +66,11 @@ export function PublicLayout() {
           </div>
           <div className="flex items-center gap-4">
             <button
-              onClick={() => setLang(lang === 'en' ? 'am' : 'en')}
+              onClick={() => setLanguage(language === 'en' ? 'am' : 'en')}
               className="flex items-center gap-2 hover:opacity-80"
             >
               <Globe size={16} />
-              <span>{lang === 'en' ? 'ኦም' : 'EN'}</span>
+              <span>{language === 'en' ? 'ኦም' : 'EN'}</span>
             </button>
             <a href="/student/login" className="hover:opacity-80">
               {t('nav_student_login')}

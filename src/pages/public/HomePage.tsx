@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { ArrowRight, Users, Briefcase, Award, TrendingUp } from 'lucide-react'
+import { ArrowRight, Users, Briefcase, Award, BookOpen } from 'lucide-react'
 import { useLang } from '@/hooks/useLanguage'
 import { supabase } from '@/lib/supabase'
 
@@ -276,6 +276,3 @@ export function HomePage() {
     </div>
   )
 }
-
-// Add missing import
-import { BookOpen } from 'lucide-react'

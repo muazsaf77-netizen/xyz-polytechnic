@@ -96,7 +96,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }
 
-  const adminLogout = async () => {
+    const adminLogout = async () => {
     try {
       await supabase.auth.signOut()
       localStorage.removeItem('adminUser')
@@ -125,6 +125,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           name: data.user.user_metadata?.name || email.split('@')[0],
         }
         localStorage.setItem('studentUser', JSON.stringify(studentUser))
+        localStorage.setItem('studentId', studentUser.studentId)
         setIsStudent(true)
         setStudentName(studentUser.name)
         setStudentId(studentUser.studentId)
@@ -139,6 +140,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       await supabase.auth.signOut()
       localStorage.removeItem('studentUser')
+      localStorage.removeItem('studentId')
       setIsStudent(false)
       setStudentName(null)
       setStudentId(null)
